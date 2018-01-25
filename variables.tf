@@ -24,3 +24,18 @@ variable gce_ssh_pub_key_file {
   description = "Path to your id_rsa.pub file."
   default     = "~/.ssh/id_rsa.pub"
 }
+
+variable networks {
+  description = "Networks, CIDR format."
+
+  default = {
+    "api"      = "192.168.3.0/24"
+    "bastion"  = "192.168.1.0/24"
+    "frontend" = "192.168.2.0/24"
+  }
+}
+
+variable lb_ip_api {
+  description = "IP address for API internal LB."
+  default     = "192.168.3.145"
+}
